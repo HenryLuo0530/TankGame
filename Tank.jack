@@ -1,0 +1,37 @@
+class Tank {
+    field int x, y;
+       
+    constructor Tank new(int ax, int ay) {
+        let x = ax;
+        let y = ay;
+        do draw(16384 + (4 * 352));
+        return this;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+    
+    method void draw(int location) {
+	    do Memory.poke(location + 0, 0);
+        do Memory.poke(location + 32, 16);
+        do Memory.poke(location + 64, 8);
+        do Memory.poke(location + 96, 468);
+        do Memory.poke(location + 128, 544);
+        do Memory.poke(location + 160, 1040);
+        do Memory.poke(location + 192, 1040);
+        do Memory.poke(location + 224, 544);
+        do Memory.poke(location + 256, 448);
+        do Memory.poke(location + 288, 128);
+        do Memory.poke(location + 320, 128);
+        do Memory.poke(location + 352, 2032);
+        do Memory.poke(location + 384, 128);
+        do Memory.poke(location + 416, 128);
+        do Memory.poke(location + 448, 320);
+        do Memory.poke(location + 480, 544);
+        return;
+    }
+
+
+}
